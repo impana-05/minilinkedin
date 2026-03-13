@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mini LinkedIn - View user profile and professional details">
+  <title>Mini LinkedIn - Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/feed.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center">
+          <span class="text-sm font-bold text-white">in</span>
+        </div>
+        <span class="text-lg font-bold text-gray-800 hidden sm:block">Mini LinkedIn</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="/feed.html" class="text-gray-500 hover:text-blue-600 transition text-sm font-medium px-3 py-2 rounded-lg hover:bg-blue-50">
+          ← Back to Feed
+        </a>
+        <a href="#" id="profileLink" class="flex items-center gap-2">
+          <img id="navAvatar" src="" alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-blue-100">
+        </a>
+        <button id="logoutBtn" class="text-gray-400 hover:text-red-500 transition p-2" title="Sign out">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Content -->
+  <main class="max-w-3xl mx-auto px-4 py-6 page-enter">
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden" id="profileContainer">
+      <div class="flex justify-center py-12">
+        <span class="loading-spinner-lg"></span>
+      </div>
+    </div>
+
+    <!-- User's Posts -->
+    <div class="mt-6" id="userPostsContainer">
+    </div>
+  </main>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="/js/firebase-config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mini LinkedIn - Edit your professional profile">
+  <title>Mini LinkedIn - Edit Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/feed.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center">
+          <span class="text-sm font-bold text-white">in</span>
+        </div>
+        <span class="text-lg font-bold text-gray-800 hidden sm:block">Mini LinkedIn</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="/feed.html" class="text-gray-500 hover:text-blue-600 transition text-sm font-medium px-3 py-2 rounded-lg hover:bg-blue-50">
+          ← Back to Feed
+        </a>
+        <a href="#" id="profileLink">
+          <img id="navAvatar" src="" alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-blue-100">
+        </a>
+        <button id="logoutBtn" class="text-gray-400 hover:text-red-500 transition p-2" title="Sign out">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Edit Profile -->
+  <main class="max-w-2xl mx-auto px-4 py-6 page-enter">
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+      <!-- Header Banner -->
+      <div class="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 h-32 relative">
+        <div class="absolute inset-0 bg-black/10"></div>
+      </div>
+
+      <div class="px-6 pb-8 -mt-16 relative">
+        <!-- Profile Picture Upload -->
+        <div class="flex items-end gap-4 mb-8">
+          <div class="relative group">
+            <img id="profilePreview" src="" alt="Profile"
+                 class="w-28 h-28 rounded-full border-4 border-white shadow-lg object-cover bg-white">
+            <label class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition cursor-pointer">
+              <span class="text-white text-sm font-medium">📷 Change</span>
+              <input type="file" id="profileImageInput" accept="image/*" class="hidden">
+            </label>
+          </div>
+          <div class="pb-2">
+            <h1 class="text-xl font-bold text-gray-900">Edit Profile</h1>
+            <p class="text-sm text-gray-500">Make your profile stand out</p>
+          </div>
+        </div>
+
+        <!-- Edit Form -->
+        <form id="editProfileForm" class="space-y-5">
+          <!-- Name -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Full Name</label>
+            <input type="text" id="editName" required placeholder="Your full name" class="form-input">
+          </div>
+
+          <!-- Headline -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Headline</label>
+            <input type="text" id="editHeadline" placeholder="e.g. Full Stack Developer | React & Node.js" class="form-input">
+            <p class="text-xs text-gray-400 mt-1">A short professional tagline</p>
+          </div>
+
+          <!-- Bio -->
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="block text-sm font-semibold text-gray-700">Bio</label>
+              <button type="button" id="enhanceBio" class="ai-btn">
+                ✨ AI Enhance Bio
+              </button>
+            </div>
+            <textarea id="editBio" rows="4" placeholder="Tell people about yourself, your experience, and passions..."
+                      class="form-input resize-none"></textarea>
+          </div>
+
+          <!-- Skills -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Skills</label>
+            <input type="text" id="editSkills" placeholder="javascript, react, python, machine learning" class="form-input">
+            <p class="text-xs text-gray-400 mt-1">Comma-separated list of your skills</p>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-3 pt-2">
+            <button type="submit" class="btn-primary py-3 px-8">
+              Save Changes
+            </button>
+            <a href="/feed.html" class="btn-secondary py-3 px-8">
+              Cancel
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="/js/firebase-config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/edit-profile.js"></script>
+</body>
+</html>

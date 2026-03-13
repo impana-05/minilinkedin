@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mini LinkedIn - Connect, share, and grow your professional network with AI-powered features">
+  <title>Mini LinkedIn - Sign In</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="auth-gradient">
+  <div class="min-h-screen flex items-center justify-center px-4 py-8">
+    <div class="w-full max-w-md">
+      <!-- Logo & Tagline -->
+      <div class="text-center mb-8">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+            <span class="text-2xl font-bold text-blue-700">in</span>
+          </div>
+          <h1 class="text-3xl font-bold text-white">Mini LinkedIn</h1>
+        </div>
+        <p class="text-blue-200 text-lg">Connect. Share. Grow with AI.</p>
+      </div>
+
+      <!-- Login Section -->
+      <div id="loginSection" class="auth-card p-8 page-enter">
+        <h2 class="text-2xl font-bold text-gray-900 mb-1">Welcome back</h2>
+        <p class="text-gray-500 mb-6">Sign in to your account</p>
+        
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" id="loginEmail" required placeholder="you@example.com" class="form-input">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <input type="password" id="loginPassword" required placeholder="••••••••" minlength="6" class="form-input">
+          </div>
+          <button type="submit" class="btn-primary w-full justify-center py-3 text-base">
+            Sign In
+          </button>
+        </form>
+        
+        <div class="mt-6 text-center">
+          <p class="text-gray-500 text-sm">
+            New to Mini LinkedIn? 
+            <a href="#" id="switchToSignup" class="text-blue-600 font-semibold hover:underline">Join now</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Signup Section -->
+      <div id="signupSection" class="auth-card p-8 hidden page-enter">
+        <h2 class="text-2xl font-bold text-gray-900 mb-1">Create your account</h2>
+        <p class="text-gray-500 mb-6">Start building your professional presence</p>
+        
+        <form id="signupForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <input type="text" id="signupName" required placeholder="John Doe" class="form-input">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" id="signupEmail" required placeholder="you@example.com" class="form-input">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <input type="password" id="signupPassword" required placeholder="At least 6 characters" minlength="6" class="form-input">
+          </div>
+          <button type="submit" class="btn-primary w-full justify-center py-3 text-base">
+            Create Account
+          </button>
+        </form>
+        
+        <div class="mt-6 text-center">
+          <p class="text-gray-500 text-sm">
+            Already a member? 
+            <a href="#" id="switchToLogin" class="text-blue-600 font-semibold hover:underline">Sign in</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Features Preview -->
+      <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+          <div class="text-2xl mb-2">🤖</div>
+          <p class="text-blue-100 text-xs font-medium">AI-Powered Bio & Captions</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+          <div class="text-2xl mb-2">🤝</div>
+          <p class="text-blue-100 text-xs font-medium">Smart Skill Matching</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+          <div class="text-2xl mb-2">📸</div>
+          <p class="text-blue-100 text-xs font-medium">Image Posts & Feed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="/js/firebase-config.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

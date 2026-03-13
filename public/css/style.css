@@ -1,0 +1,317 @@
+/* Mini LinkedIn - Custom Styles */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --linkedin-blue: #0a66c2;
+  --linkedin-blue-dark: #004182;
+  --linkedin-blue-light: #70b5f9;
+  --linkedin-bg: #f3f2ef;
+  --card-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+  --card-shadow-hover: 0 0 0 1px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.12);
+}
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--linkedin-bg);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a1a1a1; }
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: var(--linkedin-blue);
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--linkedin-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: transparent;
+  color: var(--linkedin-blue);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  border: 2px solid var(--linkedin-blue);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(10, 102, 194, 0.08);
+  border-color: var(--linkedin-blue-dark);
+}
+
+/* Skill Tags */
+.skill-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #e8f0fe, #d2e3fc);
+  color: #1a73e8;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(26, 115, 232, 0.2);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+.loading-spinner-lg {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(10,102,194,0.2);
+  border-top-color: var(--linkedin-blue);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Toast Notifications */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  animation: slideInToast 0.3s ease;
+  max-width: 400px;
+}
+
+.toast-info {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+}
+
+.toast-success {
+  background: linear-gradient(135deg, #065f46, #10b981);
+  color: white;
+}
+
+.toast-error {
+  background: linear-gradient(135deg, #991b1b, #ef4444);
+  color: white;
+}
+
+.toast-hide {
+  animation: slideOutToast 0.3s ease forwards;
+}
+
+@keyframes slideInToast {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutToast {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100px); opacity: 0; }
+}
+
+/* Post Card Animations */
+.post-card {
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Auth Page Gradient */
+.auth-gradient {
+  background: linear-gradient(135deg, #0a66c2 0%, #004182 40%, #001d3a 100%);
+  min-height: 100vh;
+}
+
+.auth-card {
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Navbar */
+.navbar {
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Form Inputs */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--linkedin-blue);
+  box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+/* AI Enhance Button */
+.ai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-btn:hover {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+.ai-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Notification Panel */
+.notif-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 380px;
+  max-height: 480px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.08);
+  z-index: 200;
+}
+
+/* Notification Badge */
+.notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* Pulse animation for notifications */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .notif-panel {
+    width: calc(100vw - 2rem);
+    right: -1rem;
+  }
+}
+
+/* Page transition */
+.page-enter {
+  animation: pageEnter 0.5s ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
